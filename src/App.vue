@@ -1,7 +1,7 @@
 <template>
   <div class="navBgColor">
     <nav class="container navbar navbar-expand-lg  ">
-        <a class="navbar-brand router-link-exact-active" href="/">
+        <a class="navbar-brand router-link-exact-active" href="/home">
           <div>
             <img src="https://firebasestorage.googleapis.com/v0/b/dogcat-d363b.appspot.com/o/logo%2F%E7%B4%85logo.png?alt=media&token=970ea71c-2085-44e6-9302-6198abbb803c">
             <h1>毛孩樂園</h1>
