@@ -2,9 +2,10 @@
   <div class="home">
     <BannerComponent />
     <HotProductsComponent />
-    <NewProductComponent />
     <OnSaleComponent />
+    <NewProductComponent />
     <PositiveFeedBackComponent />
+    <FooterConponentVue />
   </div>
 </template>
 
@@ -16,6 +17,7 @@ import HotProductsComponent from '@/components/home/HotProductsComponent.vue'
 import NewProductComponent from '@/components/home/NewProductComponent.vue'
 import OnSaleComponent from '@/components/home/OnSaleComponent.vue'
 import PositiveFeedBackComponent from '@/components/home/PositiveFeedBackComponent.vue'
+import FooterConponentVue from '@/components/FooterConponent.vue'
 
 export default {
   components: {
@@ -24,11 +26,12 @@ export default {
     NewProductComponent,
     OnSaleComponent,
     PositiveFeedBackComponent,
+    FooterConponentVue,
   },
 }
 </script>
 
-<style>
+<style scoped>
 .home {
   background-color: #fffff6;
 }

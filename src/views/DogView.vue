@@ -1,24 +1,28 @@
 <template>
-    <div class="dog">
-        <BannerComponent />
-    </div>
-  </template>
-  
-  <style></style>
-  
-  <script>
-import BannerComponent from '@/components/dog/BannerComponent.vue'
+  <div class="dog">
+    <DogBannerComponent />
+    <DogCommodityComponent />
+    <FooterConponentVue />
+  </div>
+</template>
 
-  export default {
-    components: {
-        BannerComponent,
-    },
-  }
-  </script>
-  
-  <style>
-  .dog {
-    background-color: #fffff6;
-  }
-  </style>
-  
+<style></style>
+
+<script>
+import DogBannerComponent from '@/components/dog/DogBannerComponent.vue'
+import DogCommodityComponent from '@/components/dog/DogCommodityComponent.vue'
+import FooterConponentVue from '@/components/FooterConponent.vue'
+export default {
+  components: {
+    DogBannerComponent,
+    DogCommodityComponent,
+    FooterConponentVue,
+  },
+}
+</script>
+
+<style>
+.dog {
+  background-color: #fffff6;
+}
+</style>

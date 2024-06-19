@@ -12,7 +12,7 @@
       <div class="col-md-6 order-md-1">
         <img
           class="img-fluid"
-          src="https://firebasestorage.googleapis.com/v0/b/dogcat-d363b.appspot.com/o/%E8%B2%93%E7%8B%97%E5%8D%80%2F%E5%B0%81%E9%9D%A21.jpg?alt=media&token=f4e03cc5-51b8-4e81-8aab-3418fbaae763"
+          src="https://firebasestorage.googleapis.com/v0/b/dogcat-d363b.appspot.com/o/%E8%B2%93%E7%8B%97%2F%E5%B0%81%E9%9D%A21.jpg?alt=media&token=a5c01ac7-1f1a-4478-b7c7-6d8b1b9bd4ab"
         />
       </div>
     </div>

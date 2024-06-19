@@ -4,7 +4,7 @@
       <a class="navbar-brand router-link-exact-active" href="/">
         <div>
           <img
-            src="https://firebasestorage.googleapis.com/v0/b/dogcat-d363b.appspot.com/o/logo%2F%E7%B4%85logo.png?alt=media&token=970ea71c-2085-44e6-9302-6198abbb803c"
+            src="https://firebasestorage.googleapis.com/v0/b/dogcat-d363b.appspot.com/o/logo%2F%E7%B4%85logo.png?alt=media&token=9a09684a-cda7-4295-9bda-f8dba5be1a74"
           />
           <h1>毛孩樂園</h1>
         </div>
@@ -29,7 +29,7 @@
             <router-link to="/dog" class="nav-router-link">
               <img
                 class="dogNavImg"
-                src="https://firebasestorage.googleapis.com/v0/b/dogcat-d363b.appspot.com/o/logo%2F%E7%B4%85%E7%8B%97%E7%8B%97.png?alt=media&token=78900251-cc5e-45f2-b0e7-7e81788ef5bb"
+                src="https://firebasestorage.googleapis.com/v0/b/dogcat-d363b.appspot.com/o/logo%2F%E7%B4%85%E7%8B%97%E7%8B%97.png?alt=media&token=3237183f-1fe4-4bdb-89d8-834170c6c23b"
               />
               <h2 class="ms-1">狗狗專區</h2>
             </router-link>
@@ -38,7 +38,7 @@
             <router-link to="/cat" class="nav-router-link">
               <img
                 class="otherNavImg"
-                src="https://firebasestorage.googleapis.com/v0/b/dogcat-d363b.appspot.com/o/logo%2F%E7%B4%85%E8%B2%93.png?alt=media&token=691f9daf-af47-4a1b-ab84-232fc466f00a"
+                src="https://firebasestorage.googleapis.com/v0/b/dogcat-d363b.appspot.com/o/logo%2F%E7%B4%85%E8%B2%93.png?alt=media&token=819c1b6c-85cb-4db2-a857-c2f671f143c5"
               />
               <h2 class="ms-1">貓貓專區</h2>
             </router-link>
@@ -47,7 +47,7 @@
             <router-link to="/cart" class="nav-router-link">
               <img
                 class="otherNavImg"
-                src="https://firebasestorage.googleapis.com/v0/b/dogcat-d363b.appspot.com/o/logo%2F%E7%B4%85%E8%B3%BC%E7%89%A9%E8%BB%8A.png?alt=media&token=c4113e41-7088-4c3a-a7fc-a02a841cc171"
+                src="https://firebasestorage.googleapis.com/v0/b/dogcat-d363b.appspot.com/o/logo%2F%E7%B4%85%E8%B3%BC%E7%89%A9%E8%BB%8A.png?alt=media&token=fb002bdf-d435-4b3b-9f34-533aa18f1c24"
               />
               <h2 class="ms-1">購物車</h2>
             </router-link>
@@ -56,7 +56,7 @@
             <router-link to="/sign" class="nav-router-link">
               <img
                 class="otherNavImg"
-                src="https://firebasestorage.googleapis.com/v0/b/dogcat-d363b.appspot.com/o/logo%2F%E7%B4%85%E6%9C%83%E5%93%A1.png?alt=media&token=b3e1293c-1b52-49cd-a08e-471c1527e10c"
+                src="https://firebasestorage.googleapis.com/v0/b/dogcat-d363b.appspot.com/o/logo%2F%E7%B4%85%E6%9C%83%E5%93%A1.png?alt=media&token=d0c00c4d-3c00-4387-93ca-6a67b3bc00d2"
               />
               <h2 class="ms-1">登入/註冊</h2>
             </router-link>
@@ -65,7 +65,7 @@
             <router-link to="/back" class="nav-router-link">
               <img
                 class="otherNavImg"
-                src="https://firebasestorage.googleapis.com/v0/b/dogcat-d363b.appspot.com/o/logo%2F%E7%B4%85%E8%85%B3%E5%8D%B0.png?alt=media&token=b5d7db56-a456-4a1c-99e2-7f8d99b76efd"
+                src="https://firebasestorage.googleapis.com/v0/b/dogcat-d363b.appspot.com/o/logo%2F%E7%B4%85%E8%85%B3%E5%8D%B0.png?alt=media&token=b0285986-cb18-4e95-9afc-406e09cb4676"
               />
               <h2 class="ms-1">後臺系統登入</h2>
             </router-link>
@@ -75,23 +75,6 @@
     </nav>
   </div>
   <router-view />
-
-  <div class="footerBgColor">
-    <footer class="container">
-      <div class="content">
-        <img
-          src="https://firebasestorage.googleapis.com/v0/b/dogcat-d363b.appspot.com/o/logo%2F%E7%B4%85logo.png?alt=media&token=970ea71c-2085-44e6-9302-6198abbb803c"
-          class="img-fluid"
-        />
-        <div class="content2">
-          <p>台北市寵物區狗狗街貓貓巷9號</p>
-          <p>手機電話：0912345678</p>
-          <p>Gmail：xxxxxxx@gmail.com</p>
-          <p>Copyright © c 2024.本網站內容僅用於非商業用途，純作品練習。</p>
-        </div>
-      </div>
-    </footer>
-  </div>
 </template>
 
 <style>
@@ -154,41 +137,5 @@ nav .navbar-nav h2 {
 .otherNavImg {
   width: 30px;
   height: 30px;
-}
-
-.footerBgColor {
-  background-color: #fffff2;
-  padding-bottom: 20px;
-}
-
-footer .content {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-footer .content2 {
-  padding-top: 30px;
-}
-
-@media (max-width: 768px) {
-  footer .content {
-    flex-direction: column;
-    align-items: center;
-  }
-  footer .content2 {
-    text-align: center;
-  }
-}
-
-footer img {
-  width: 180px;
-  height: 180px;
-}
-
-footer p {
-  margin: 3px 0px;
-  font-size: 20px;
-  color: #924444;
 }
 </style>
