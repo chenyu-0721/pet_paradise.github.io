@@ -95,16 +95,14 @@
 }
 
 @media (max-width: 768px) {
- 
   .navbar-collapse {
     position: absolute;
     background-color: #fffff2;
-    top:76px;
+    top: 76px;
     left: 0;
     right: 0;
     z-index: 2;
   }
-  
 }
 
 nav a div h1,

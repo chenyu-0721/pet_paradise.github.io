@@ -2,9 +2,27 @@
   <section class="register1">
     <h1 class="text-center">註冊</h1>
     <div class="d-flex flex-column">
-      <input class="email" type="email" v-model="email" placeholder="example@gmail.com" required />
-      <input class="password" type="password" v-model="password" placeholder="password" required />
-      <input class="confirmPassword" type="password" v-model="confirmPassword" placeholder="confirm password" required />
+      <input
+        class="email"
+        type="email"
+        v-model="email"
+        placeholder="example@gmail.com"
+        required
+      />
+      <input
+        class="password"
+        type="password"
+        v-model="password"
+        placeholder="password"
+        required
+      />
+      <input
+        class="confirmPassword"
+        type="password"
+        v-model="confirmPassword"
+        placeholder="confirm password"
+        required
+      />
       <div class="mg-auto">
         <button class="btn register" @click="register">註冊</button>
       </div>
@@ -13,7 +31,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from 'axios'
 
 export default {
   data() {
@@ -21,56 +39,46 @@ export default {
       email: '',
       password: '',
       confirmPassword: '',
-      errorMessage: ''
-    };
+      errorMessage: '',
+    }
   },
   methods: {
     async register() {
-      const { email, password, confirmPassword } = this;
+      const { email, password, confirmPassword } = this
 
-      if (password !== confirmPassword) {
-        this.errorMessage = '密碼不一致！';
-        this.email = '';
-        this.password = '';
-        this.confirmPassword = '';
-        alert('註冊失敗：' + this.errorMessage);
-        return;
-      }
-      
-      console.log(email,
-          password,
-          confirmPassword);
+      console.log(email, password, confirmPassword)
       try {
-        const response = await axios.post('https://pet-back.onrender.com/users/sign_up', {
-          email,
-          password,
-          confirmPassword
-        });
+        const response = await axios.post(
+          'https://pet-back.onrender.com/users/sign_up',
+          {
+            email,
+            password,
+            confirmPassword,
+          },
+        )
 
-        this.email = '';
-        this.password = '';
-        this.confirmPassword = '';
-        console.log(response.data);
-        alert('註冊成功！請使用新帳號登入。');
-        this.$router.push('/sign'); 
-
+        this.email = ''
+        this.password = ''
+        this.confirmPassword = ''
+        console.log(response.data)
+        alert('註冊成功！請使用新帳號登入。')
+        this.$router.push('/sign')
       } catch (error) {
         if (error.response && error.response.data) {
-          const regex = /<h1>(.*?)<\/h1>/;
-          const match = error.response.data.match(regex);
+          const regex = /<h1>(.*?)<\/h1>/
+          const match = error.response.data.match(regex)
           if (match) {
-            this.errorMessage = match[1];
+            this.errorMessage = match[1]
           }
         } else {
-          this.errorMessage = '註冊時發生錯誤，請稍後再試！';
+          this.errorMessage = '註冊時發生錯誤，請稍後再試！'
         }
-        alert('註冊失敗：' + this.errorMessage);
-        console.error('Error:', error);
+        alert('註冊失敗：' + this.errorMessage)
+        console.error('Error:', error)
       }
-      
-    }
-  }
-};
+    },
+  },
+}
 </script>
 
 <style scoped>
