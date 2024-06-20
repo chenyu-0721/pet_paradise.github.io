@@ -22,9 +22,10 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 100vh;
+  height: calc(100vh - 76px);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: end;
 }
+
 </style>
