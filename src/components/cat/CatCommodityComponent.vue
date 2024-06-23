@@ -64,7 +64,7 @@ export default {
           })
         })
         .catch((error) => {
-          console.error('An error occurred:', error)
+          console.log('An error occurred:', error)
         })
     })
 

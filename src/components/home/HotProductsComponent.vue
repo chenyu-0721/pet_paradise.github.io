@@ -31,7 +31,7 @@ export default {
         const response = await axios.get('https://pet-back.onrender.com/posts')
         hotList.value = response.data.data.filter((product) => product.popular)
       } catch (error) {
-        console.error('An error occurred:', error)
+        console.log('An error occurred:', error)
       }
     }
 

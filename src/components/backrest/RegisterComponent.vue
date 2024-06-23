@@ -74,7 +74,7 @@ export default {
         alert('註冊失敗：' + errorMessage.value)
         password.value = ''
         confirmPassword.value = ''
-        console.error('Error:', error)
+        // console.log('Error:', error)
       }
     }
 

@@ -1,7 +1,7 @@
 <template>
   <div class="navBgColor">
     <nav class="container navbar navbar-expand-lg">
-      <a class="navbar-brand router-link-exact-active" href="/">
+      <a class="navbar-brand router-link-exact-active" href="./">
         <div>
           <img
             src="https://firebasestorage.googleapis.com/v0/b/dogcat-d363b.appspot.com/o/logo%2F%E7%B4%85logo.png?alt=media&token=9a09684a-cda7-4295-9bda-f8dba5be1a74"
@@ -26,7 +26,7 @@
       >
         <ul class="navbar-nav align-items-center">
           <li class="nav-item">
-            <router-link to="/dog" class="nav-router-link">
+            <router-link to="./dog" class="nav-router-link">
               <img
                 class="dogNavImg"
                 src="https://firebasestorage.googleapis.com/v0/b/dogcat-d363b.appspot.com/o/logo%2F%E7%B4%85%E7%8B%97%E7%8B%97.png?alt=media&token=3237183f-1fe4-4bdb-89d8-834170c6c23b"
@@ -35,7 +35,7 @@
             </router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/cat" class="nav-router-link">
+            <router-link to="./cat" class="nav-router-link">
               <img
                 class="otherNavImg"
                 src="https://firebasestorage.googleapis.com/v0/b/dogcat-d363b.appspot.com/o/logo%2F%E7%B4%85%E8%B2%93.png?alt=media&token=819c1b6c-85cb-4db2-a857-c2f671f143c5"
@@ -44,7 +44,7 @@
             </router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/cart" class="nav-router-link">
+            <router-link to="./cart" class="nav-router-link">
               <img
                 class="otherNavImg"
                 src="https://firebasestorage.googleapis.com/v0/b/dogcat-d363b.appspot.com/o/logo%2F%E7%B4%85%E8%B3%BC%E7%89%A9%E8%BB%8A.png?alt=media&token=fb002bdf-d435-4b3b-9f34-533aa18f1c24"
@@ -53,7 +53,7 @@
             </router-link>
           </li>
           <li v-if="isLog" class="nav-item">
-            <router-link to="/sign" class="nav-router-link">
+            <router-link to="./sign" class="nav-router-link">
               <img
                 class="otherNavImg"
                 src="https://firebasestorage.googleapis.com/v0/b/dogcat-d363b.appspot.com/o/logo%2F%E7%B4%85%E6%9C%83%E5%93%A1.png?alt=media&token=d0c00c4d-3c00-4387-93ca-6a67b3bc00d2"
@@ -62,7 +62,7 @@
             </router-link>
           </li>
           <li v-else class="nav-item">
-            <router-link to="/sign" class="nav-router-link">
+            <router-link class="nav-router-link">
               <img
                 class="otherNavImg"
                 src="https://firebasestorage.googleapis.com/v0/b/dogcat-d363b.appspot.com/o/logo%2F%E7%B4%85%E6%9C%83%E5%93%A1.png?alt=media&token=d0c00c4d-3c00-4387-93ca-6a67b3bc00d2"

@@ -60,9 +60,9 @@ export default {
 
         alert('使用者登入成功！ 角色: ' + role.value)
         if (role.value === 'administrator') {
-          router.push('/information')
+          router.push('./information')
         } else {
-          router.push('/')
+          router.push('./')
         }
 
         email.value = ''
@@ -74,7 +74,7 @@ export default {
           errorMessage.value = '登入時發生錯誤，請稍後再試！'
         }
         alert('登入失敗：' + errorMessage.value)
-        console.error('Error:', error)
+        // console.log('Error:', error)
       }
     }
 

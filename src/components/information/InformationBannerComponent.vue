@@ -222,7 +222,7 @@ export default {
           })
         })
         .catch((error) => {
-          console.error('An error occurred:', error)
+          console.log('An error occurred:', error)
         })
     })
 
@@ -237,7 +237,7 @@ export default {
           alert('刪除成功')
         })
         .catch((error) => {
-          console.error('An error occurred:', error)
+          console.log('An error occurred:', error)
         })
       console.log(id)
     }
@@ -275,7 +275,7 @@ export default {
         })
         .catch(() => {
           alert('更新失敗')
-          // console.error('更新失敗:', error);
+          // console.log('更新失敗:', error);
         })
     }
 
@@ -302,7 +302,7 @@ export default {
           // console.log('newProductList301行:',newProductList);
         })
         .catch((error) => {
-          console.error('An error occurred:', error)
+          console.log('An error occurred:', error)
         })
     }
 
