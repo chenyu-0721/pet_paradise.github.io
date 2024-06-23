@@ -31,7 +31,9 @@
                   <span class="card-title">{{ dog.title }}</span>
                   <span class="card-price">NT${{ dog.price }}</span>
                 </div>
-                <button type="button" class="btn mt-auto">加入購物車</button>
+                <button @click="buttontest()" type="button" class="btn mt-auto">
+                  加入購物車
+                </button>
               </div>
             </div>
           </div>
@@ -44,7 +46,7 @@
 <script>
 import axios from 'axios'
 import { ref, onMounted, computed } from 'vue'
-
+import Cookies from 'js-cookie'
 const url = 'https://pet-back.onrender.com/posts'
 
 export default {
@@ -81,10 +83,21 @@ export default {
       )
     })
 
+    const buttontest = () => {
+      if (Cookies.get('token') == '') {
+        alert('請先登入')
+        console.log('失敗')
+      } else {
+        alert('已加入購物車')
+        console.log('成功')
+      }
+    }
+
     return {
       categories,
       setCategory,
       filteredDogs,
+      buttontest,
     }
   },
 }
@@ -93,7 +106,7 @@ export default {
 <style scoped>
 .card {
   width: auto;
-  height: 360px;
+  height: auto;
 }
 
 .card-img-top {

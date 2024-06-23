@@ -4,6 +4,8 @@ import DogView from '../views/DogView.vue'
 import CatView from '../views/CatView.vue'
 import signView from '../views/SignView.vue'
 import registerView from '../views/RegisterView.vue'
+import informationView from '../views/InformationView.vue'
+import cartView from '../views/CartView.vue'
 
 const routes = [
   {
@@ -30,6 +32,16 @@ const routes = [
     path: '/register',
     name: 'registerView',
     component: registerView,
+  },
+  {
+    path: '/information',
+    name: 'information',
+    component: informationView,
+  },
+  {
+    path: '/cart',
+    name: 'cart',
+    component: cartView,
   },
 ]
 

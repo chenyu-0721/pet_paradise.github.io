@@ -27,46 +27,64 @@
 </template>
 
 <script>
+import { ref } from 'vue'
 import axios from 'axios'
+import { useRouter } from 'vue-router'
+// import Cookies from 'js-cookie'
 
 export default {
-  data() {
-    return {
-      email: '',
-      password: '',
-      errorMessage: '',
-    }
-  },
-  methods: {
-    async login() {
-      const { email, password } = this
+  setup() {
+    const email = ref('')
+    const password = ref('')
+    const errorMessage = ref('')
+    const role = ref('')
+    // const token = ref('')
+    const router = useRouter()
 
-      console.log(email, password)
+    const login = async () => {
+      // console.log(email.value, password.value)
 
       try {
         const response = await axios.post(
           'https://pet-back.onrender.com/users/sign_in',
           {
-            email,
-            password,
+            email: email.value,
+            password: password.value,
           },
         )
+        const { user } = response.data
+        role.value = user.role
+        // token.value = user.token
 
-        this.email = ''
-        this.password = ''
+        // Cookies.set('token', token.value) // 7 天後過期
 
-        alert('登入成功！')
-        console.log(response.data)
+        alert('使用者登入成功！ 角色: ' + role.value)
+        if (role.value === 'administrator') {
+          router.push('/information')
+        } else {
+          router.push('/')
+        }
+
+        email.value = ''
+        password.value = ''
       } catch (error) {
         if (error.response && error.response.data) {
-          this.errorMessage = error.response.data.message
+          errorMessage.value = error.response.data.message
         } else {
-          this.errorMessage = '登入時發生錯誤，請稍後再試！'
+          errorMessage.value = '登入時發生錯誤，請稍後再試！'
         }
-        alert('登入失敗：' + this.errorMessage)
+        alert('登入失敗：' + errorMessage.value)
         console.error('Error:', error)
       }
-    },
+    }
+
+    return {
+      email,
+      password,
+      errorMessage,
+      role,
+      login,
+    }
   },
 }
 </script>

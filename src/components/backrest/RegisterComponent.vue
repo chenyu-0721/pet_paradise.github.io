@@ -31,52 +31,60 @@
 </template>
 
 <script>
+import { ref } from 'vue'
 import axios from 'axios'
+import { useRouter } from 'vue-router'
 
 export default {
-  data() {
-    return {
-      email: '',
-      password: '',
-      confirmPassword: '',
-      errorMessage: '',
-    }
-  },
-  methods: {
-    async register() {
-      const { email, password, confirmPassword } = this
+  setup() {
+    const email = ref('')
+    const password = ref('')
+    const confirmPassword = ref('')
+    const errorMessage = ref('')
+    const router = useRouter()
 
-      console.log(email, password, confirmPassword)
+    const register = async () => {
+      // console.log(email.value, password.value, confirmPassword.value)
       try {
         const response = await axios.post(
           'https://pet-back.onrender.com/users/sign_up',
           {
-            email,
-            password,
-            confirmPassword,
+            email: email.value,
+            password: password.value,
+            confirmPassword: confirmPassword.value,
           },
         )
 
-        this.email = ''
-        this.password = ''
-        this.confirmPassword = ''
+        email.value = ''
+        password.value = ''
+        confirmPassword.value = ''
         console.log(response.data)
         alert('註冊成功！請使用新帳號登入。')
-        this.$router.push('/sign')
+        router.push('/sign')
       } catch (error) {
         if (error.response && error.response.data) {
           const regex = /<h1>(.*?)<\/h1>/
           const match = error.response.data.match(regex)
           if (match) {
-            this.errorMessage = match[1]
+            errorMessage.value = match[1]
           }
         } else {
-          this.errorMessage = '註冊時發生錯誤，請稍後再試！'
+          errorMessage.value = '註冊時發生錯誤，請稍後再試！'
         }
-        alert('註冊失敗：' + this.errorMessage)
+        alert('註冊失敗：' + errorMessage.value)
+        password.value = ''
+        confirmPassword.value = ''
         console.error('Error:', error)
       }
-    },
+    }
+
+    return {
+      email,
+      password,
+      confirmPassword,
+      errorMessage,
+      register,
+    }
   },
 }
 </script>

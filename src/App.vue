@@ -52,7 +52,7 @@
               <h2 class="ms-1">購物車</h2>
             </router-link>
           </li>
-          <li class="nav-item">
+          <li v-if="isLog" class="nav-item">
             <router-link to="/sign" class="nav-router-link">
               <img
                 class="otherNavImg"
@@ -61,13 +61,13 @@
               <h2 class="ms-1">登入/註冊</h2>
             </router-link>
           </li>
-          <li class="nav-item">
-            <router-link to="/back" class="nav-router-link">
+          <li v-else class="nav-item">
+            <router-link to="/sign" class="nav-router-link">
               <img
                 class="otherNavImg"
-                src="https://firebasestorage.googleapis.com/v0/b/dogcat-d363b.appspot.com/o/logo%2F%E7%B4%85%E8%85%B3%E5%8D%B0.png?alt=media&token=b0285986-cb18-4e95-9afc-406e09cb4676"
+                src="https://firebasestorage.googleapis.com/v0/b/dogcat-d363b.appspot.com/o/logo%2F%E7%B4%85%E6%9C%83%E5%93%A1.png?alt=media&token=d0c00c4d-3c00-4387-93ca-6a67b3bc00d2"
               />
-              <h2 class="ms-1">後臺系統登入</h2>
+              <h2 class="ms-1">登出</h2>
             </router-link>
           </li>
         </ul>
@@ -76,6 +76,31 @@
   </div>
   <router-view />
 </template>
+
+<script>
+import Cookies from 'js-cookie'
+import { onMounted } from 'vue'
+
+export default {
+  setup() {
+    let isLog = true
+
+    onMounted(() => {
+      const token = Cookies.get('token')
+      if (token) {
+        isLog = false
+      } else {
+        isLog = true
+      }
+    })
+
+    // 返回空对象或其他数据，根据需要
+    return {
+      isLog,
+    }
+  },
+}
+</script>
 
 <style>
 #app {
