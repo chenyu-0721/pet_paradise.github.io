@@ -19,6 +19,7 @@ import OnSaleComponent from '@/components/home/OnSaleComponent.vue'
 import PositiveFeedBackComponent from '@/components/home/PositiveFeedBackComponent.vue'
 import FooterConponentVue from '@/components/FooterConponent.vue'
 
+
 export default {
   components: {
     BannerComponent,

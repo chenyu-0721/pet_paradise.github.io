@@ -9,19 +9,21 @@
                 <td class="table-title">圖片</td>
                 <td class="table-title">名稱</td>
                 <td class="table-title">價錢</td>
+                <td class="table-title">數量</td>
                 <td class="table-title text-end">編輯/刪除</td>
               </tr>
-              <tr v-for="newProduct in newProductList" :key="newProduct.id">
+              <tr v-for="item in cartItems" :key="item._id">
                 <td>
-                  <img :src="newProduct.image" class="table-image" alt="" />
+                  <img :src="item.image" class="table-image" alt="商品圖片" />
                 </td>
-                <td class="table-title2">{{ newProduct.title }}</td>
-                <td class="table-title2">{{ newProduct.price }}</td>
+                <td class="table-title2">{{ item.title }}</td>
+                <td class="table-title2">{{ item.price }}</td>
+                <td class="table-title2">{{ item.quantity || 1 }}</td>
                 <td class="text-end">
                   <button
                     type="button"
                     class="btn btncolor1"
-                    @click="removeCardItem(newProduct._id)"
+                    @click="removeFromCart(item._id)"
                   >
                     刪除
                   </button>
@@ -38,27 +40,50 @@
 <script>
 import axios from 'axios'
 import { ref, onMounted } from 'vue'
+import Cookies from 'js-cookie'
 
-const url = 'https://pet-back.onrender.com/posts'
+const url = 'https://pet-back.onrender.com/users'
 
 export default {
   setup() {
-    const newProductList = ref([])
-    onMounted(() => {
-      axios
-        .get(url)
-        .then((response) => {
-          response.data.data.forEach((element) => {
-            newProductList.value.push(element)
-          })
+    const cartItems = ref([])
+
+    onMounted(async () => {
+      const token = Cookies.get('token')
+
+      try {
+        const response = await axios.get(`${url}/getCart`, {
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
         })
-        .catch((error) => {
-          console.log('An error occurred:', error)
-        })
+        cartItems.value = response.data.cart
+        console.log(response.data.cart)
+      } catch (error) {
+        console.error('An error occurred:', error)
+      }
     })
 
+    const removeFromCart = async (id) => {
+      try {
+        const token = Cookies.get('token')
+        await axios.delete(`${url}/cart/${id}`, {
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        alert('商品已刪除')
+        cartItems.value = cartItems.value.filter((item) => item._id !== id)
+      } catch (error) {
+        console.error('An error occurred:', error)
+      }
+    }
+
     return {
-      newProductList,
+      cartItems,
+      removeFromCart,
     }
   },
 }

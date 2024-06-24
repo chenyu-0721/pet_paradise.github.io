@@ -31,7 +31,11 @@
                   <span class="card-title">{{ dog.title }}</span>
                   <span class="card-price">NT${{ dog.price }}</span>
                 </div>
-                <button @click="buttontest()" type="button" class="btn mt-auto">
+                <button
+                  @click="addToCart(dog)"
+                  type="button"
+                  class="btn mt-auto"
+                >
                   加入購物車
                 </button>
               </div>
@@ -48,6 +52,7 @@ import axios from 'axios'
 import { ref, onMounted, computed } from 'vue'
 import Cookies from 'js-cookie'
 const url = 'https://pet-back.onrender.com/posts'
+const url2 = 'https://pet-back.onrender.com/users'
 
 export default {
   setup() {
@@ -83,21 +88,39 @@ export default {
       )
     })
 
-    const buttontest = () => {
-      if (Cookies.get('token') == '') {
-        alert('請先登入')
-        console.log('失敗')
-      } else {
-        alert('已加入購物車')
-        console.log('成功')
-      }
+    const addToCart = (product) => {
+      const token = Cookies.get('token')
+
+      axios
+        .post(
+          `${url2}/addCart`,
+          {
+            image: product.image,
+            title: product.title,
+            price: product.price,
+            quantity: product.quantity,
+          },
+          {
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${token}`,
+            },
+          },
+        )
+        .then(() => {
+          alert('商品已加入購物車')
+        })
+        .catch((error) => {
+          console.error('Error:', error) // 捕獲並打印任何錯誤
+          alert('尚未登入，請先登入')
+        })
     }
 
     return {
       categories,
       setCategory,
       filteredDogs,
-      buttontest,
+      addToCart,
     }
   },
 }

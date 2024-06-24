@@ -9,10 +9,8 @@ module.exports = {
 
   configureWebpack: {
     performance: {
-      // 将资源大小限制设置为 Infinity，表示没有限制
       maxAssetSize: Infinity,
 
-      // 将入口文件大小限制设置为 Infinity，表示没有限制
       maxEntrypointSize: Infinity,
     },
   },

@@ -30,7 +30,7 @@
 import { ref } from 'vue'
 import axios from 'axios'
 import { useRouter } from 'vue-router'
-// import Cookies from 'js-cookie'
+import Cookies from 'js-cookie'
 
 export default {
   setup() {
@@ -38,7 +38,7 @@ export default {
     const password = ref('')
     const errorMessage = ref('')
     const role = ref('')
-    // const token = ref('')
+    const token = ref('')
     const router = useRouter()
 
     const login = async () => {
@@ -54,9 +54,9 @@ export default {
         )
         const { user } = response.data
         role.value = user.role
-        // token.value = user.token
+        token.value = user.token
 
-        // Cookies.set('token', token.value) // 7 天後過期
+        Cookies.set('token', token.value)
 
         alert('使用者登入成功！ 角色: ' + role.value)
         if (role.value === 'administrator') {

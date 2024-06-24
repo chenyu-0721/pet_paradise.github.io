@@ -7,6 +7,7 @@
 <script>
 import CartComponentVue from '@/components/cart/CartComponent.vue'
 
+
 export default {
   components: {
     CartComponentVue,
