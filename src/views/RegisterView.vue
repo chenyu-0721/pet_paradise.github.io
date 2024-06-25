@@ -1,5 +1,6 @@
 <template>
   <div class="registerbg">
+    <NavComponent />
     <RegisterComponentVue />
   </div>
 </template>
@@ -8,9 +9,11 @@
 
 <script>
 import RegisterComponentVue from '@/components/backrest/RegisterComponent.vue'
+import NavComponent from '@/components/NavComponent.vue'
 
 export default {
   components: {
+    NavComponent,
     RegisterComponentVue,
   },
 }

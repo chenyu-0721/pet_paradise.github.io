@@ -8,17 +8,21 @@
               <tr>
                 <td class="table-title">圖片</td>
                 <td class="table-title">名稱</td>
-                <td class="table-title">價錢</td>
                 <td class="table-title">數量</td>
-                <td class="table-title text-end">編輯/刪除</td>
+                <td class="table-title">價錢</td>
+                <td class="table-title text-end">刪除</td>
               </tr>
               <tr v-for="item in cartItems" :key="item._id">
                 <td>
                   <img :src="item.image" class="table-image" alt="商品圖片" />
                 </td>
                 <td class="table-title2">{{ item.title }}</td>
+                <td class="table-title2">
+                  <select>
+                    <option value="">{{ item.quantity || 1 }}</option>
+                  </select>
+                </td>
                 <td class="table-title2">{{ item.price }}</td>
-                <td class="table-title2">{{ item.quantity || 1 }}</td>
                 <td class="text-end">
                   <button
                     type="button"
@@ -47,6 +51,7 @@ const url = 'https://pet-back.onrender.com/users'
 export default {
   setup() {
     const cartItems = ref([])
+    
 
     onMounted(async () => {
       const token = Cookies.get('token')
@@ -90,8 +95,11 @@ export default {
 </script>
 
 <style>
+
+
+
 .cartBanner {
-  background-color: #fffff6;
+  background-color: #fffff6 ;
 }
 
 .table > :not(caption) > * > * {

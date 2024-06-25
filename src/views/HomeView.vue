@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <NavComponent />
     <BannerComponent />
     <HotProductsComponent />
     <OnSaleComponent />
@@ -12,6 +13,7 @@
 <style></style>
 
 <script>
+import NavComponent from '@/components/NavComponent.vue'
 import BannerComponent from '@/components/home/BannerConponent.vue'
 import HotProductsComponent from '@/components/home/HotProductsComponent.vue'
 import NewProductComponent from '@/components/home/NewProductComponent.vue'
@@ -19,9 +21,9 @@ import OnSaleComponent from '@/components/home/OnSaleComponent.vue'
 import PositiveFeedBackComponent from '@/components/home/PositiveFeedBackComponent.vue'
 import FooterConponentVue from '@/components/FooterConponent.vue'
 
-
 export default {
   components: {
+    NavComponent,
     BannerComponent,
     HotProductsComponent,
     NewProductComponent,

@@ -1,4 +1,5 @@
 <template>
+  <NavComponent />
   <div class="sign">
     <SignInComponentVue />
   </div>
@@ -8,9 +9,10 @@
 
 <script>
 import SignInComponentVue from '@/components/backrest/SignInComponent.vue'
-
+import NavComponent from '@/components/NavComponent.vue'
 export default {
   components: {
+    NavComponent,
     SignInComponentVue,
   },
 }
